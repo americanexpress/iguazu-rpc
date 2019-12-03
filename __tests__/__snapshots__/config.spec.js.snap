@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config getProcedure throws when provided with an name that does not exist 1`] = `"throws-when-provided-with-an-name-that-does-not-exist is not a configured procedure"`;
+
+exports[`config setProcedure throws when not provided with a name to reference the procedure configuration 1`] = `"name must be a string (was falsey)"`;
+
+exports[`config setProcedure throws when not provided with a name to reference the procedure configuration 2`] = `"name must be a string (was number)"`;
+
+exports[`config setProcedure warns when provided with an existing name 1`] = `
+Array [
+  "overriding existing config for procedure warns-when-provided-with-an-existing-name",
+]
+`;

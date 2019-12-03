@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`duck proceduresReducer builds and returns an inital state 1`] = `
+Immutable.Map {
+  "procedureCaches": Immutable.Map {},
+  "pendingCalls": Immutable.Map {},
+}
+`;

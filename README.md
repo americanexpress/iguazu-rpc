@@ -438,7 +438,7 @@ Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.
 ## 🗝️ License
 
 Any contributions made under this project will be governed by the [Apache License
-2.0](https://https://github.com/americanexpress/iguazu-rpc/blob/master/LICENSE.txt).
+2.0](./LICENSE.txt).
 
 ## 🗣️ Code of Conduct
 

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`queryProcedureResult successful call promise rejects when getResultFromCache does not get the new value from the newly built cache 1`] = `[Error: sample-procedure did not cache the result/error from the call]`;
+
+exports[`queryProcedureResult throws an error if the call does not return a Promise 1`] = `"call function for sample-procedure must return a Promise"`;
+
+exports[`queryProcedureResult throws an error if the call returns an object but not a Promise 1`] = `"call function for sample-procedure must return a Promise"`;
+
+exports[`queryProcedureResult throws an error if the call returns null but not a Promise 1`] = `"call function for sample-procedure must return a Promise"`;
+
+exports[`queryProcedureResult unsuccessful call promise rejects when getResultFromCache does not get the new value from the newly built cache 1`] = `[Error: sample-procedure did not cache the result/error from the call]`;
