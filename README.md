@@ -21,7 +21,6 @@ Want to get paid for your contributions to `iguazu-rpc`?
 * [Features](#-features)
 * [Usage](#-usage)
 * [API](#-api)
-* [Available Scripts](#-available-scripts)
 * [Contributing](#-contributing)
 
 ## ✨ Features
@@ -386,39 +385,6 @@ Retrieve the result of a procedure without making a request.
 const procedureResult = getProcedureResult({ procedureName, args })(state);
 ```
 
-## 📜 Available Scripts
-
-**`npm run lint`**
-
-Verifies that your code matches the American Express code style defined in
-[`eslint-config-amex`](https://github.com/americanexpress/eslint-config-amex).
-
-**`npm run build`**
-
-Runs `babel` to compile `src` files to transpiled JavaScript into `lib` using
-[`babel-preset-amex`](https://github.com/americanexpress/babel-preset-amex).
-
-**`npm test`**
-
-Runs unit tests **and** verifies the format of all commit messages on the current branch.
-
-**`npm posttest`**
-
-Runs linting on the current branch.
-
-## 🎣 Git Hooks
-
-These commands will be automatically run during normal git operations like committing code.
-
-**`pre-commit`**
-
-This hook runs `npm test` before allowing a commit to be checked in.
-
-**`commit-msg`**
-
-This hook verifies that your commit message matches the One Amex conventions. See the **commit
-message** section in the [contribution guidelines](./CONTRIBUTING.md).
-
 ## 🏆 Contributing
 
 We welcome Your interest in the American Express Open Source Community on Github.
@@ -429,7 +395,7 @@ and to recipients of software distributed by American Express, You reserve all
 right, title, and interest, if any, in and to Your Contributions. Please [fill
 out the Agreement](https://cla-assistant.io/americanexpress/iguazu-rpc).
 
-Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.md) for commit formatting details.
+Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to get started contributing.
 
 ## 🗝️ License
 
