@@ -112,7 +112,7 @@ Provide the system information which is not limited to the below:
 - Version of iguazu-rpc: [e.g. 5.0.0]
 - Node version:[e.g 10.15.1]
 
-### Security Bugs
+### Security bugs
 
 Please review our [Security Policy](./SECURITY.md). Please follow the instructions outlined in the policy.
 
