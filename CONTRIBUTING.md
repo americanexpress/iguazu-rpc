@@ -32,7 +32,7 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 3. Install the dependencies by running:
 
     ```bash
-    $  npm install
+    $ npm install
 
     ```
 
