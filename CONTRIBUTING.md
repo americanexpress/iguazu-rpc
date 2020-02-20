@@ -59,7 +59,9 @@ Runs unit tests **and** verifies the format of all commit messages on the curren
 
 - **`npm posttest`**
 
-Runs linting on the current branch, checks that the commits follow [conventional commits](https://www.conventionalcommits.org/) and verifies that the `package-lock.json` file includes public NPM registry URLs.
+Runs linting on the current branch, checks that the commits follow
+[conventional commits](https://www.conventionalcommits.org/) and
+verifies that the `package-lock.json` file includes public NPM registry URLs.
 
 ## Submitting a new feature
 
