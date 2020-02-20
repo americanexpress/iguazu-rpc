@@ -96,7 +96,7 @@ Please provide code snippets or a link to repository with steps to reproduce the
 
 ### Expected behavior
 
-Please provide a description of the expected behavior
+Please provide a description of the expected behavior.
 
 ### Screenshots
 
