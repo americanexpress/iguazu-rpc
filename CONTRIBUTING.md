@@ -20,7 +20,7 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 ### Installation
 
 1. Fork the repository `iguazu-rpc` to your GitHub account.
-2. Afterwards run the following commands in your terminal
+2. Afterwards run the following commands in your terminal:
 
     ```bash
     $ git clone https://github.com/<your-github-username>/iguazu-rpc
