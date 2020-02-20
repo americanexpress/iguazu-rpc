@@ -29,7 +29,7 @@ This project adheres to the American Express [Code of Conduct](./CODE_OF_CONDUCT
 
    > replace `your-github-username` with your github username
 
-3. Install the dependencies by running
+3. Install the dependencies by running:
 
     ```bash
     $  npm install
