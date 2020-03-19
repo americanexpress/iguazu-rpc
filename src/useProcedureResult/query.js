@@ -82,10 +82,11 @@ export default function queryProcedureResult({ procedureName, args, forceFetch =
   } = config.getProcedure(procedureName);
 
   return (dispatch, getState, { fetchClient } = {}) => {
-    const cache = getProcedureCache({ procedureName })(getState);
-
     if (!forceFetch) {
-      const iguazuDataOfCachedResult = getIguazuDataOfCachedResult(getResultFromCache, cache, args);
+      const initialCache = getProcedureCache({ procedureName })(getState);
+      const iguazuDataOfCachedResult = getIguazuDataOfCachedResult(
+        getResultFromCache, initialCache, args
+      );
       if (iguazuDataOfCachedResult) {
         return iguazuDataOfCachedResult;
       }
@@ -108,6 +109,7 @@ export default function queryProcedureResult({ procedureName, args, forceFetch =
     const promise = callPromise
       .then(
         (result) => {
+          const cache = getProcedureCache({ procedureName })(getState);
           const updatedCache = buildUpdatedCache({ cache, args, result });
           dispatch(updateProcedureCache({ procedureName, updatedCache }));
           if (modifyOtherCaches) {
@@ -121,6 +123,7 @@ export default function queryProcedureResult({ procedureName, args, forceFetch =
           return updatedCache;
         },
         (error) => {
+          const cache = getProcedureCache({ procedureName })(getState);
           const updatedCache = buildUpdatedCache({ cache, args, error });
           dispatch(updateProcedureCache({ procedureName, updatedCache }));
           dispatch(finishLoadingWithError({ procedureName, args, error }));
