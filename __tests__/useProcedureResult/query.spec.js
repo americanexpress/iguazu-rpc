@@ -716,6 +716,51 @@ describe('queryProcedureResult', () => {
       const query = queryProcedureResult({ procedureName, args: queryArgs })(dispatch, getState);
       return expect(query.promise).rejects.toMatchSnapshot();
     });
+
+    it('should buildUpdatedCache with the cache value only after the callPromise is fulfilled', () => {
+      expect.assertions(2);
+      const procedureName = 'sample-procedure';
+      const queryArgs = { id: 'myCoolKey' };
+      const updatedCache = ImmutableMap({
+        surfer: 'rosa',
+      });
+      const dispatch = jest.fn();
+      const getState = jest.fn()
+        .mockImplementationOnce(() => ({
+          iguazuRPC: proceduresReducer(undefined, { type: 'IRRELEVANT_ACTION' }),
+        }))
+        .mockImplementationOnce(() => ({
+          iguazuRPC: proceduresReducer(undefined, { type: 'IRRELEVANT_ACTION' }),
+        }))
+        .mockImplementationOnce(() => ({
+          iguazuRPC: proceduresReducer(undefined, updateProcedureCache({
+            procedureName,
+            updatedCache,
+          })),
+        }));
+      const buildUpdatedCache = jest.fn(({
+        cache, args, result, error,
+      }) => cache.set(args.id, error || result));
+      config.getProcedure.mockImplementationOnce(() => ({
+        getResultFromCache: jest.fn(({ args, cache }) => {
+          if (!cache.has(args.id)) {
+            throw new Error('make the call');
+          }
+          return cache.get(args.id);
+        }),
+        call: jest.fn(() => Promise.resolve('why hello!')),
+        buildUpdatedCache,
+      }));
+      const query = queryProcedureResult({ procedureName, args: queryArgs })(dispatch, getState);
+      return query.promise.then(() => {
+        expect(buildUpdatedCache).toHaveBeenCalledTimes(1);
+        expect(buildUpdatedCache.mock.calls[0][0]).toEqual({
+          cache: updatedCache,
+          args: queryArgs,
+          result: 'why hello!',
+        });
+      });
+    });
   });
 
   describe('unsuccessful call', () => {
@@ -860,6 +905,53 @@ describe('queryProcedureResult', () => {
       }));
       const query = queryProcedureResult({ procedureName, args: queryArgs })(dispatch, getState);
       return expect(query.promise).rejects.toMatchSnapshot();
+    });
+
+    it('should buildUpdatedCache with the cache value only after the callPromise is rejected', () => {
+      expect.assertions(2);
+      const procedureName = 'sample-procedure';
+      const queryArgs = { id: 'myCoolKey' };
+      const updatedCache = ImmutableMap({
+        surfer: 'rosa',
+      });
+      const dispatch = jest.fn();
+      const getState = jest.fn()
+        .mockImplementationOnce(() => ({
+          iguazuRPC: proceduresReducer(undefined, { type: 'IRRELEVANT_ACTION' }),
+        }))
+        .mockImplementationOnce(() => ({
+          iguazuRPC: proceduresReducer(undefined, { type: 'IRRELEVANT_ACTION' }),
+        }))
+        .mockImplementationOnce(() => ({
+          iguazuRPC: proceduresReducer(undefined, updateProcedureCache({
+            procedureName,
+            updatedCache,
+          })),
+        }));
+      const buildUpdatedCache = jest.fn(({
+        cache, args, result, error,
+      }) => cache.set(args.id, error || result));
+      config.getProcedure.mockImplementationOnce(() => ({
+        getResultFromCache: jest.fn(({ args, cache }) => {
+          if (!cache.has(args.id)) {
+            throw new Error('make the call');
+          }
+          return cache.get(args.id);
+        }),
+        call: jest.fn(() => Promise.reject(
+          new Error('uh oh'))
+        ),
+        buildUpdatedCache,
+      }));
+      const query = queryProcedureResult({ procedureName, args: queryArgs })(dispatch, getState);
+      return query.promise.then(() => {
+        expect(buildUpdatedCache).toHaveBeenCalledTimes(1);
+        expect(buildUpdatedCache.mock.calls[0][0]).toEqual({
+          cache: updatedCache,
+          args: queryArgs,
+          error: new Error('uh oh'),
+        });
+      });
     });
   });
 
