@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/americanexpress/iguazu-rpc.git"
   },
-  "version": "1.5.9",
+  "version": "1.6.0",
   "contributors": [
     "Andres Escobar <Andres.Escobar@aexp.com> (https://github.com/anescobar1991)",
     "James Singleton <James.Singleton1@aexp.com> (https://github.com/JamesSingleton)",
