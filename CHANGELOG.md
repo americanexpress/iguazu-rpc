@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/americanexpress/iguazu-rpc/compare/v1.6.0...v1.6.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* **release:** added admin to codeowners ([7effe51](https://github.com/americanexpress/iguazu-rpc/commit/7effe51c22720a9bcc7634aa575d21c7fed34b45))
+
 # [1.6.0](https://github.com/americanexpress/iguazu-rpc/compare/v1.5.0...v1.6.0) (2020-04-07)
 
 
