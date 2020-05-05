@@ -77,7 +77,9 @@ Set up the reducer in your store:
 
 ```javascript
 import { proceduresReducer } from 'iguazu-rpc';
-import { combineReducers, createStore } from 'redux';
+import { combineReducers } from 'redux-immutable';
+
+import { createStore } from 'redux';
 
 const reducer = combineReducers({
   procedures: proceduresReducer,
@@ -148,7 +150,8 @@ You may also supply a custom `fetch` client to iguazu-rpc using Redux Thunk.
 docs](https://github.com/reduxjs/redux-thunk#injecting-a-custom-argument))
 
 ```javascript
-import { combineReducers, createStore } from 'redux';
+import { combineReducers } from 'redux-immutable';
+import { createStore } from 'redux';
 import { proceduresReducer, setProcedures } from 'iguazu-rpc';
 import thunk from 'redux-thunk';
 
