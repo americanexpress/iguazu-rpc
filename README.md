@@ -358,7 +358,18 @@ configureIguazuRPC({
 ## Clearing the data after you are done.
 ### clearProcedureResult({ procedureName, args })
 Usually you can clear your entire store when a user session ends but sometimes residual data can be a concern for long running sessions.
-In these cases the `clearProcedureResult` action can be used to selectively clean up the residual data when is no longer needed.
+In these cases the `clearProcedureResult` action can be dispatched to selectively clean up the residual data when it is no longer needed.
+
+```js
+import { clearProcedureResult } from 'iguazu-rpc';
+import { connect } from 'react-redux';
+// ...
+const mapDispatchToProps = (dispatch) => ({
+  clearDataCache: (args) => dispatch(clearProcedureResult({ procedureName: 'readData', args })),
+});
+// ...
+connect(null, mapDispatchToProps)(SomeComponent);
+```
 
 This function uses a procedure's `buildUpdatedCache` method to update a key's result and error values to `undefined`.
 To have the key removed from the cache, `buildUpdatedCache` can be implemented as in the following example:
@@ -366,7 +377,12 @@ To have the key removed from the cache, `buildUpdatedCache` can be implemented a
  configureIguazuRPC({
    procedures: {
      readData: {
-       buildUpdatedCache: ({ cache, args, result }) => (
+       buildUpdatedCache: ({
+         cache,
+         args,
+         result,
+         error,
+       }) => (
          typeof result === 'undefined' && typeof error === 'undefined'
            ? cache.remove(hash(args))
            : cache.set(hash(args), error || result)
