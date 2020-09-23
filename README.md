@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img src='https://github.com/americanexpress/iguazu-rpc/raw/master/iguazu-rpc.png' alt="Iguazu RPC - One Amex" width='50%'/>
+  <img src='https://github.com/americanexpress/iguazu-rpc/raw/main/iguazu-rpc.png' alt="Iguazu RPC - One Amex" width='50%'/>
 </h1>
 
 [![npm](https://img.shields.io/npm/v/iguazu-rpc)](https://www.npmjs.com/package/iguazu-rpc)
-[![Travis (.org) branch](https://img.shields.io/travis/americanexpress/iguazu-rpc/master)](https://travis-ci.org/americanexpress/iguazu-rpc)
+![Health Check](https://github.com/americanexpress/iguazu-rpc/workflows/Health%20Check/badge.svg)
 
 > Iguazu RPC is a plugin for the [Iguazu](https://github.com/americanexpress/iguazu)
 > ecosystem that allows for configurable async calls and caching strategies.
