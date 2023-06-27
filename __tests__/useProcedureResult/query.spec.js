@@ -679,7 +679,7 @@ describe('queryProcedureResult', () => {
         iguazuRPC: proceduresReducer(undefined, { type: 'IRRELEVANT_ACTION' }),
       }));
       const buildUpdatedCache = jest.fn();
-      const then = jest.fn(() => Promise.resolve((ImmutableMap({ myCoolKey: 'not 42' }))));
+      const then = jest.fn(() => Promise.resolve(ImmutableMap({ myCoolKey: 'not 42' })));
       config.getProcedure.mockImplementationOnce(() => ({
         getResultFromCache: jest.fn(({ args, cache }) => {
           if (!cache.has(args.id)) {
@@ -691,7 +691,7 @@ describe('queryProcedureResult', () => {
         buildUpdatedCache,
       }));
       const query = queryProcedureResult({ procedureName, args: queryArgs })(dispatch, getState);
-      return expect(query.promise).resolves.toEqual(('not 42'));
+      return expect(query.promise).resolves.toEqual('not 42');
     });
 
     it('promise rejects when getResultFromCache does not get the new value from the newly built cache', () => {

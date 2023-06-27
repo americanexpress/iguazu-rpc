@@ -46,7 +46,6 @@ const mockedConfig = {
 
 config.getProcedure.mockReturnValue(mockedConfig);
 
-
 describe('clearProcedureResult', () => {
   it('returns a thunk function', () => {
     expect(clearProcedureResult({})).toEqual(expect.any(Function));

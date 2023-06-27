@@ -203,7 +203,7 @@ function MyContainer({ isLoading, loadedWithErrors, myData }) {
 
   return (
     <div>
-myData =
+      myData =
       {myData}
     </div>
   );
