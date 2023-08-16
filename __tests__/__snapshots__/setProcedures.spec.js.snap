@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`setProcedures buildUpdatedCache throws when not a function 1`] = `"required param \\"buildUpdatedCache\\" of buildUpdatedCache-throws-when-not-a-function must be a function (was boolean)"`;
+exports[`setProcedures buildUpdatedCache throws when not a function 1`] = `"required param "buildUpdatedCache" of buildUpdatedCache-throws-when-not-a-function must be a function (was boolean)"`;
 
-exports[`setProcedures buildUpdatedCache throws when not present 1`] = `"required param \\"buildUpdatedCache\\" of buildUpdatedCache-throws-when-not-present must be a function (was undefined)"`;
+exports[`setProcedures buildUpdatedCache throws when not present 1`] = `"required param "buildUpdatedCache" of buildUpdatedCache-throws-when-not-present must be a function (was undefined)"`;
 
-exports[`setProcedures cacheModifier throws when provided but is not a function 1`] = `"param \\"cacheModifier\\" of cacheModifier-throws-when-provided-but-is-not-a-function must be a function (was boolean)"`;
+exports[`setProcedures cacheModifier throws when provided but is not a function 1`] = `"param "cacheModifier" of cacheModifier-throws-when-provided-but-is-not-a-function must be a function (was boolean)"`;
 
-exports[`setProcedures call throws when not a function 1`] = `"required param \\"call\\" of call-throws-when-not-a-function must be a function (was boolean)"`;
+exports[`setProcedures call throws when not a function 1`] = `"required param "call" of call-throws-when-not-a-function must be a function (was boolean)"`;
 
-exports[`setProcedures call throws when not present 1`] = `"required param \\"call\\" of call-throws-when-not-present must be a function (was undefined)"`;
+exports[`setProcedures call throws when not present 1`] = `"required param "call" of call-throws-when-not-present must be a function (was undefined)"`;
 
-exports[`setProcedures getResultFromCache throws when not a function 1`] = `"required param \\"getResultFromCache\\" of getResultFromCache-throws-when-not-a-function must be a function (was boolean)"`;
+exports[`setProcedures getResultFromCache throws when not a function 1`] = `"required param "getResultFromCache" of getResultFromCache-throws-when-not-a-function must be a function (was boolean)"`;
 
-exports[`setProcedures getResultFromCache throws when not present 1`] = `"required param \\"getResultFromCache\\" of getResultFromCache-throws-when-not-present must be a function (was undefined)"`;
+exports[`setProcedures getResultFromCache throws when not present 1`] = `"required param "getResultFromCache" of getResultFromCache-throws-when-not-present must be a function (was undefined)"`;
 
-exports[`setProcedures modifyOtherCaches throws when provided but is not a function 1`] = `"param \\"modifyOtherCaches\\" of modifyOtherCaches-throws-when-provided-but-is-not-a-function must be a function (was boolean)"`;
+exports[`setProcedures modifyOtherCaches throws when provided but is not a function 1`] = `"param "modifyOtherCaches" of modifyOtherCaches-throws-when-provided-but-is-not-a-function must be a function (was boolean)"`;
 
 exports[`setProcedures throws when not given an Object for the procedure configuration 1`] = `"procedure name configuration must be an object (was undefined)"`;
 

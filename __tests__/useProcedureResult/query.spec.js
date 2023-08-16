@@ -29,7 +29,7 @@ import proceduresReducer, {
 import queryProcedureResult from '../../src/useProcedureResult/query';
 
 jest.mock('../../src/config', () => {
-  const realConfig = require.requireActual('../../src/config').default;
+  const realConfig = jest.requireActual('../../src/config').default;
   return {
     ...realConfig,
     getProcedure: jest.fn(() => ({
